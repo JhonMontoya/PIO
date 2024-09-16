@@ -150,16 +150,234 @@
     <hr>
     <hr>
 
-    <h2>Pregunta 3</h2>
-    <div class="respuesta">
+    <h2 class="pregunta">Ejercicio 3</h2>
+    
+    <div class="container-img">
+        <img src="./img/Ej3.png" alt="Ejercicio 3   ">
+    </div>
+    <p class="respuesta">
+        Esta tabla no cumple con 3FN debido a que posee dependencias transitivas, se puede observar que la columna "<strong>Jefe_Departamento</strong>" depende de la columna "<strong>Departamento</strong>" y no de la columna clave "<strong>ID_Empleado</strong>"
+    </p>
+    <h3>Rediseño a tabla 3FN </h3>
+    <div class="container-flex">
+        <div class="container-tab">
+            <table>
+                <tr>
+                    <th>ID_Empleado</th>
+                    <th>Nombre</th>
+                    <th>ID_Departamento</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Ana</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Juan</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Luis</td>
+                    <td>1</td>
+                </tr>
+            </table>
         </div>
+        <div class="container-tab">
+            <table>
+                <tr>
+                    <th>ID_Departamento</th>
+                    <th>Departamento</th>
+                    <th>Jefe_Departamento</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Ventas</td>
+                    <td>Carlos</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Compras</td>
+                    <td>Laura</td>
+                </tr>
+            </table>
+        </div>
+    </div>
 
-    <h2>Pregunta 4</h2>
-    <div class="respuesta">
-        </div>
+    <hr>
+    <hr>
 
-    <h2>Pregunta 5</h2>
-    <div class="respuesta">
+    <h2 class="pregunta">Ejercicio 4</h2>
+    
+    <div class="container-img">
+        <img src="./img/Ej4.png" alt="Ejercicio 4">
+    </div>
+    <ul>
+        <li>Proceso 1FN</li>
+        <p class="respuesta">
+            No hay violaciones a 1FN ya que cada elemento de cada columna es único (átomicidad)
+        </p>
+        <li>Proceso 2FN</li>
+        <p class="respuesta">Se viola 2FN debido a que tenemos dependencias parciales con la <strong>direccion</strong> y el <strong>Nombre_Cliente</strong>, puesto que esta no depende directamente de <strong>ID_Venta</strong></p>
+
+        <h3>Rediseño a tabla 2FN </h3>
+
+        <div class="container-flex">
+            <div class="container-tab">
+                <table>
+                    <tr>
+                        <th>ID_Cliente</th>
+                        <th>Nombre_Cliente</th>
+                        <th>Dirección</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>Ana</td>
+                        <td>Calle A</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Juan</td>
+                        <td>Calle B</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="container-tab">
+                <table>
+                    <tr>
+                        <th>ID_Venta</th>
+                        <th>ID_Cliente</th>
+                        <th>Producto</th>
+                        <th>Precio_Unitario</th>
+                        <th>Cantidad</th>
+                        <th>Vendedor</th>
+                    </tr>
+                    <tr>
+                        <td>201</td>
+                        <td>1</td>
+                        <td>Laptop</td>
+                        <td>1000</td>
+                        <td>2</td>
+                        <td>Laura</td>
+                    </tr>
+                    <tr>
+                        <td>202</td>
+                        <td>2</td>
+                        <td>Teclado</td>
+                        <td>20</td>
+                        <td>1</td>
+                        <td>Laura</td>
+                    </tr>
+                    <tr>
+                        <td>203</td>
+                        <td>1</td>
+                        <td>Raton</td>
+                        <td>15</td>
+                        <td>3</td>
+                        <td>Carlos</td>
+                    </tr>
+                </table>
+            </div>
         </div>
+        <li>Proceso 3FN</li>
+        <p class="respuesta">No hay violación de 3FN debido a que no se tienen dependencias transitvas y cumple con 2FN por lo tanto queda igual</p>
+    </ul>
+    
+    <hr>
+    <hr>
+
+    <h2 class="pregunta">Ejercicio 5</h2>
+    
+    <div class="container-img">
+        <img src="./img/Ej5.png" alt="Ejercicio 5">
+    </div>
+    <ul>
+        <li>Proceso 1FN</li>
+        <p class="respuesta">
+            La tabla cumple con 1FN debido a que cada elemento de cada columna tiene un único valor (atomicidad) y no hay filas repetidas por la tanto la tabla para 1FN es la misma del problema
+        </p>
+        <li>Proceso 2FN</li>
+        <p class="respuesta">Del mismo modo la tabla cumple con los criterios de 2FN debido a que no posee dependencias parciales ya que cada campo esta direcatmente relacionado con la clave primaria "<strong>ID_Producto</strong>", por lo tanto la tabla no sufre modificaciones</p>
+
+        <li>Proceso 3FN</li>
+        <p class="respuesta">En este caso hay una violacion a uno de los criterios de 3FN debido a que hay dependecias transitiva, debido a que <strong>Tel_Proveedor</strong> no depende directamente de la clave primaria <strong>ID_Producto</strong> por lo tanto la modificación queda: </p>
+
+        <h3>Rediseño a tabla 3FN </h3>
+
+        <div class="container-flex">
+            <div class="container-tab">
+                <table>
+                    <tr>
+                        <th>ID_Producto</th>
+                        <th>Nombre_Producto</th>
+                        <th>ID_Proveedor</th>
+                        <th>Precio</th>
+                        <th>Descripción</th>
+                    </tr>
+                    <tr>
+                        <td>301</td>
+                        <td>Televisor</td>
+                        <td>1</td>
+                        <td>500</td>
+                        <td>40 Pulgadas</td>
+                    </tr>
+                    <tr>
+                        <td>302</td>
+                        <td>Celular</td>
+                        <td>2</td>
+                        <td>900</td>
+                        <td>iPhone 12</td>
+                    </tr>
+                    <tr>
+                        <td>303</td>
+                        <td>Laptop</td>
+                        <td>3</td>
+                        <td>1000</td>
+                        <td>16GB RAM</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="container-tab">
+                <table>
+                    <tr>
+                        <th>ID_Proveedor</th>
+                        <th>Nombre_Proveedor</th>
+                        <th>Tel_Proveedor</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>Samsumg</td>
+                        <td>123456</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Apple</td>
+                        <td>789012</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>HP</td>
+                        <td>555123</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </ul>
+
+    <hr>
+    <hr>
+
+    <footer id="footer">
+        <div>
+          <h3>Jhonathan Damian Guerrero Montoya</h3>
+          <p>
+            Our time in this world is short, so when you have the opportunity, enjoy the world of knowledge.
+          </p>
+          <div class="copyright">
+            &copy; Copyright <strong><span>Tatan</span></strong>. All Rights Reserved
+          </div>
+        </div>
+      </footer>
 </body>
 </html>
