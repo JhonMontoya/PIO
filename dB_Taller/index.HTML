@@ -13,7 +13,7 @@
     <div class="container-img">
         <img src="./img/Ej1.png" alt="Ejercicio 1">
     </div>
-    <p>
+    <p class="respuesta">
         Esta tabla no se encuentra en 1FN debido a que en las columnas "<strong>Teléfonos</strong>" y "<strong>Dirección</strong>" no cumplen con la regla de que cada columna debe contener solo un valor único (atómico), como por ejemplo vemos que Ana tiene dos teléfonos y vive en la calle 1 de la ciudad A
     </p>
     <h3>Rediseño a tabla 1FN </h3>
@@ -90,12 +90,65 @@
     
     <hr>
     <hr>
-    <div class="respuesta">
-        </div>
+
+    <h2 class="pregunta">Ejercicio 2</h2>
     
-    <h2>Pregunta 2</h2>
-    <div class="respuesta">
+    <div class="container-img">
+        <img src="./img/Ej2.png" alt="Ejercicio 2">
+    </div>
+    <p class="respuesta">
+        Esta tabla no está en 2FN debido a que contiene dependencias parciales, observece que por ejemplo, que los clientes no tiene dependencia con la clave primaria pedido ya que sólo depende de "<strong>ID_cliente</strong>"
+    </p>
+    <h3>Rediseño a tabla 2FN </h3>
+    <div class="container-flex">
+        <div class="container-tab">
+            <table>
+                <tr>
+                    <th>ID_Cliente</th>
+                    <th>Nombre Cliente</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Ana</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Juan</td>
+                </tr>
+            </table>
         </div>
+        <div class="container-tab">
+            <table>
+                <tr>
+                    <th>ID_Pedido</th>
+                    <th>ID_Cliente</th>
+                    <th>Producto</th>
+                    <th>Cantidad</th>
+                </tr>
+                <tr>
+                    <td>101</td>
+                    <td>1</td>
+                    <td>Computadora</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td>102</td>
+                    <td>2</td>
+                    <td>Teclado</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>103</td>
+                    <td>1</td>
+                    <td>Ratón</td>
+                    <td>3</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <hr>
+    <hr>
 
     <h2>Pregunta 3</h2>
     <div class="respuesta">

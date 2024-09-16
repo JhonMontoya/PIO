@@ -38,6 +38,7 @@ td, th{
 }
 .container-tab{
     flex: 1;
+    padding: 1% 5% 1% 5%;
 }
 .container-img{
     text-align: center;
