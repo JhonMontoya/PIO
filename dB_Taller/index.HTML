@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taller 2</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Respuestas</h1>
+
+    <h2 class="pregunta">Ejercicio 1</h2>
+    <div class="container-img">
+        <img src="./img/Ej1.png" alt="Ejercicio 1">
+    </div>
+    <p>
+        Esta tabla no se encuentra en 1FN debido a que en las columnas "<strong>Teléfonos</strong>" y "<strong>Dirección</strong>" no cumplen con la regla de que cada columna debe contener solo un valor único (atómico), como por ejemplo vemos que Ana tiene dos teléfonos y vive en la calle 1 de la ciudad A
+    </p>
+    <h3>Rediseño a tabla 1FN </h3>
+    <div class="container-flex">
+        <div class="container-tab">
+            <table>
+                <tr>
+                    <th>ID_Empleado</th>
+                    <th>Nombre</th>
+                    <th>Dirección</th>
+                    <th>Ciudad</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Ana</td>
+                    <td>Calle 1</td>
+                    <td>A</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Juan</td>
+                    <td>Calle 2</td>
+                    <td>B</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Luis</td>
+                    <td>calle 3</td>
+                    <td>A</td>
+                </tr>
+                
+            </table>
+        </div>
+        <div class="container-tab">
+            <table>
+                <tr>
+                   <th>ID_Telefono</th>
+                   <th>ID_Empleado</th>
+                   <th>Teléfono</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>123456</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>1</td>
+                    <td>987654</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>2</td>
+                    <td>555444</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>3</td>
+                    <td>111222</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>3</td>
+                    <td>333444</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>3</td>
+                    <td>999888</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    
+    <hr>
+    <hr>
+    <div class="respuesta">
+        </div>
+    
+    <h2>Pregunta 2</h2>
+    <div class="respuesta">
+        </div>
+
+    <h2>Pregunta 3</h2>
+    <div class="respuesta">
+        </div>
+
+    <h2>Pregunta 4</h2>
+    <div class="respuesta">
+        </div>
+
+    <h2>Pregunta 5</h2>
+    <div class="respuesta">
+        </div>
+</body>
+</html>
