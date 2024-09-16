@@ -1,0 +1,20 @@
+body{
+    background-color: rgb(218, 179,218);
+}
+th {
+color: rgb(255, 92, 92);
+}
+table,th,td {
+border: 1px solid black;
+border-collapse: collapse;
+padding: 7px;
+margin: 20px;
+margin-left: 50px;
+}
+
+.clase{
+    color: green;
+    font-size: 15px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    
+}
