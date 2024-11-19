@@ -1,5 +1,5 @@
 /**
-es una sintaxis que permite extraer valores especificos de un onjeto o de una funcion a variables de rapida directa y
+es una sintaxis que permite extraer valores especificos de un objeto o de una funcion a variables de rapida directa y
 organizada. permite que el codigo sea mas legible y reduce la necesidad de acceder repetidamente a una propiedad
 de un objeto 
 */
@@ -89,8 +89,32 @@ y un número de contacto. La clínica necesita dos funciones:
 mostrarFichaBasica: Que muestre solo el nombre de la mascota y su especie.
 mostrarFichaCompleta: Que muestre los detalles completos de la ficha. 
 
-tarea 2: realizar dos ejercicios utilizando promesas y Async/Await y exxplicarlo en la proxima clase
+tarea 2: realizar dos ejercicios utilizando promesas y Async/Await y explicarlo en la proxima clase
 que seria el dia martes 5 de noviembre del 2024 a las 7:45 pm por este mismo lugar.
 
 */
 
+const pet ={
+    nombre: "Manchas",
+    especie: "Canino",
+    edad: "1 año",
+    propietario: "Jhonathan Guerrero",
+    contacto: {
+        email: "email@email",
+        telefono: "1234567801"
+    }
+};
+
+function mostrarFichaBasica({nombre, especie}){
+    console.log(`El nombre de la mascota es: ${nombre}`);
+    console.log(`La especie es: ${especie}`);
+}
+
+function mostrarFichaCompleta({edad, propietario, contacto}){ //tambien sirve contacto:{email, telefono}
+    mostrarFichaBasica(pet);
+    console.log(`La edad es: ${edad}`);
+    console.log(`El propietario es ${propietario}`);
+    console.log(`El número de contacto es ${contacto.telefono}`);
+}
+
+mostrarFichaCompleta(pet);
