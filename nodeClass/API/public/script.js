@@ -1,46 +1,9 @@
-const { OPEN } = require("ws");
-
 //URL de la API
 const API_URL = 'http://localhost:2500/usuarios';
-const WS_URL = 'ws://localhost:2500';
 
 //Seleccionamos los elementos del DOM
 
 let editingUserId= null;
-let socket;
-
-function initWebSocket(){
-    socket = new WebSocket(WS_URL);
-    //evento: Conexion abierta
-    socket.addEventListener('open',()=>{
-        console.log('Conectado al servidor ws');
-    });
-    //evento: mensaje recibido
-    socket.addEventListener('message',(event)=>{
-        const message = JSON.parse(event.data);
-
-        switch(message.action){
-            case 'add':
-                addUserToTable(message.user);
-                break;
-
-            case 'update':
-                updateUserInTable(message.user);
-                break;
-            
-            case 'delete':
-                removeUserFromTable(message.user);
-                break;
-        }
-
-    });
-    //evento: conexion cerrada
-    socket.addEventListener('close',()=>{
-        console.log("Desconectado del servidor ws, intentando conectar...");
-        setTimeout(initWebSocket, 2000);
-    });
-
-}
 
 async function loadUser() {
     try {
@@ -49,7 +12,7 @@ async function loadUser() {
 
         const userList = document.getElementById("user-list");
         userList.innerHTML = "";
-/*
+
         usuarios.forEach(user => {
             const row = document.createElement('tr');
             row.innerHTML = `
@@ -65,31 +28,9 @@ async function loadUser() {
 
             userList.appendChild(row);
         });
-*/
     } catch (error) {
         alert("Error al cargar la base de datos", error.message);
     }
-}
-
-
-function addUserToTable(user){
-    const userList = document.getElementById("user-list");
-    const row = document.createElement('tr');
-
-    row.setAttribute('data-id,', user.id);
-    row.innerHTML = `
-            <td> ${user.id} </td>
-            <td> ${user.nombre} </td>
-            <td> ${user.rol} </td>
-
-            <td>
-                <button type="button" class="btn btn-warning" onclick = "editUser(${user.id})"> Editar </button>
-                <button type="button" class="btn btn-danger" onclick = "deleteUser(${user.id})"> Eliminar </button>
-            </td>
-            `;
-
-        userList.appendChild(row);
-
 }
 
 async function saveUser(event) {
@@ -183,4 +124,3 @@ document.getElementById("user-form").addEventListener('submit',saveUser);
 loadUser();
 
 setInterval(loadUser, 20000);
-initWebSocket();
